@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicóloga Infantil em Cuiabá | Rebeca Cavalcante</title>
+    <meta name="description" content="Psicóloga infantil no Centro Norte, Cuiabá. Atendimento especializado: Ludoterapia, Psicoterapia para Adolescentes e Orientação de Pais. Agende uma sessão.">
+    <link rel="canonical" href="https://rebecapsicologa.shop/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rebecapsicologa.shop/">
+    <meta property="og:title" content="Psicóloga Infantil em Cuiabá | Rebeca Cavalcante">
+    <meta property="og:description" content="Psicóloga infantil no Centro Norte, Cuiabá. Atendimento especializado: Ludoterapia, Psicoterapia para Adolescentes e Orientação de Pais. Agende uma sessão.">
+    <meta property="og:image" content="https://rebecapsicologa.shop/assets/img/hero-bg.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rebecapsicologa.shop/">
+    <meta property="twitter:title" content="Psicóloga Infantil em Cuiabá | Rebeca Cavalcante">
+    <meta property="twitter:description" content="Psicóloga infantil no Centro Norte, Cuiabá. Atendimento especializado: Ludoterapia, Psicoterapia para Adolescentes e Orientação de Pais. Agende uma sessão.">
+    <meta property="twitter:image" content="https://rebecapsicologa.shop/assets/img/hero-bg.webp">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#88C5CC', // Verde Menta Elegante
+                        secondary: '#D8A7B1', // Rosa Malva Suave
+                        accent: '#967AA1', // Terracota Acinzentado
+                        textMain: '#374151', // Cinza Chumbo
+                        bgOffWhite: '#FDFBF7', // Bege Off-White
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #374151;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        p, a, button, .font-sans {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Sticky Menu -->
+    <header class="fixed w-full top-0 bg-bgOffWhite/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio">
+                        <img src="/assets/img/logo.png" alt="Psicóloga Rebeca Cavalcante Logo" class="h-12 w-auto object-contain">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-textMain hover:text-primary transition font-medium text-sm tracking-wide">Início</a>
+                    <a href="#servicos" class="text-textMain hover:text-primary transition font-medium text-sm tracking-wide">Serviços</a>
+                    <a href="#sobre" class="text-textMain hover:text-primary transition font-medium text-sm tracking-wide">A Psicóloga</a>
+                    <a href="#faq" class="text-textMain hover:text-primary transition font-medium text-sm tracking-wide">Dúvidas</a>
+                    <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition duration-300 text-sm tracking-wide shadow-sm">
+                        Agendar Consulta
+                    </a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-textMain hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" x-show="!mobileMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="h-6 w-6" x-show="mobileMenuOpen" style="display: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-bgOffWhite shadow-lg absolute w-full left-0 top-full" style="display: none;">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a @click="mobileMenuOpen = false" href="#inicio" class="block px-3 py-2 text-textMain hover:bg-secondary/10 rounded-md font-medium">Início</a>
+                <a @click="mobileMenuOpen = false" href="#servicos" class="block px-3 py-2 text-textMain hover:bg-secondary/10 rounded-md font-medium">Serviços</a>
+                <a @click="mobileMenuOpen = false" href="#sobre" class="block px-3 py-2 text-textMain hover:bg-secondary/10 rounded-md font-medium">A Psicóloga</a>
+                <a @click="mobileMenuOpen = false" href="#faq" class="block px-3 py-2 text-textMain hover:bg-secondary/10 rounded-md font-medium">Dúvidas</a>
+                <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="block px-3 py-2 mt-4 text-center bg-primary text-white rounded-md font-medium">Agendar Consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- 1. Hero Section -->
+        <section id="inicio" class="relative bg-bgOffWhite pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/img/hero-bg.webp" alt="Consultório acolhedor de psicologia" class="w-full h-full object-cover opacity-20" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-r from-bgOffWhite via-bgOffWhite/90 to-transparent"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5 pr-0 md:pr-10">
+                    <span class="text-accent uppercase tracking-widest text-sm font-semibold mb-3 block">Cuiabá e região metropolitana</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-textMain leading-tight mb-6">
+                        Psicóloga Infantil em Cuiabá: Acolhimento e Desenvolvimento Estratégico
+                    </h1>
+                    <p class="text-lg text-textMain/80 mb-8 font-light max-w-xl">
+                        Um espaço seguro e moderno para ajudar crianças e adolescentes a lidarem com suas emoções, construindo bases sólidas para o futuro através do acolhimento e parceria com a família.
+                    </p>
+                    <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="inline-block bg-primary hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-medium transition duration-300 shadow-md text-lg">
+                        Agendar uma Sessão no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Prova Social -->
+        <section id="prova-social" class="py-12 bg-secondary/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-serif text-textMain mb-8 font-semibold">+ de 300 Famílias Transformadas em Mato Grosso</h2>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16">
+                    <div class="flex flex-col items-center">
+                        <div class="flex text-yellow-400 mb-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="font-medium text-textMain">Avaliação 5.0 no Google</p>
+                        <p class="text-sm text-textMain/70 mt-1">A melhor psicóloga infantil perto de mim</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Serviços -->
+        <section id="servicos" class="py-20 bg-bgOffWhite">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif text-textMain font-semibold mb-4">Especialidades em Psicologia Infantil e Juvenil</h2>
+                    <p class="text-textMain/80 max-w-2xl mx-auto">Atendimentos personalizados para cada fase do desenvolvimento.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Serviço 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 border border-secondary/20">
+                        <img src="/assets/img/servico-infantil.webp" alt="Criança brincando na Ludoterapia" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary font-semibold mb-3">Psicoterapia Infantil (Ludoterapia)</h3>
+                            <p class="text-textMain/80 mb-6 font-light leading-relaxed">Atendimento especializado para crianças de 5 a 12 anos. Utilizamos o brincar para ajudar na regulação emocional, medos e comportamento de forma leve.</p>
+                            <a href="#faq" class="text-accent hover:text-primary transition font-medium text-sm flex items-center">
+                                Saber mais sobre Psicoterapia Infantil
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Serviço 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 border border-secondary/20">
+                        <img src="/assets/img/servico-adolescentes.webp" alt="Adolescente em terapia" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary font-semibold mb-3">Psicoterapia para Adolescentes</h3>
+                            <p class="text-textMain/80 mb-6 font-light leading-relaxed">Um espaço seguro e sem julgamentos para jovens lidarem com ansiedade, pressão escolar, autoestima e a construção da própria identidade.</p>
+                            <a href="#faq" class="text-accent hover:text-primary transition font-medium text-sm flex items-center">
+                                Saber mais sobre Terapia para Adolescentes
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Serviço 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 border border-secondary/20">
+                        <img src="/assets/img/servico-pais.webp" alt="Pais em orientação" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary font-semibold mb-3">Orientação de Pais</h3>
+                            <p class="text-textMain/80 mb-6 font-light leading-relaxed">Acolhimento e estratégias práticas para auxiliar os pais na condução dos desafios diários, fortalecendo o vínculo familiar.</p>
+                            <a href="#faq" class="text-accent hover:text-primary transition font-medium text-sm flex items-center">
+                                Saber mais sobre Orientação de Pais
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sobre a Psicóloga -->
+        <section id="sobre" class="py-20 bg-secondary/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-primary/20 rounded-t-full rounded-b-lg transform translate-x-4 translate-y-4"></div>
+                            <img src="/assets/img/sobre.webp" alt="Psicóloga especialista em crianças cuiabá" class="relative z-10 w-full h-auto rounded-t-full rounded-b-lg object-cover shadow-lg" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-serif text-textMain font-semibold mb-6">Conheça a Psicóloga Rebeca Cavalcante</h2>
+                        <p class="text-textMain/80 font-light leading-relaxed mb-6">
+                            Sou especialista em psicologia infantil e juvenil, dedicada a oferecer um espaço de acolhimento genuíno. Acredito que o desenvolvimento saudável acontece quando a criança ou adolescente se sente compreendido e os pais se sentem amparados.
+                        </p>
+                        <p class="text-textMain/80 font-light leading-relaxed mb-8">
+                            Minha abordagem lúdica e empática permite acessar o universo dos mais jovens de forma natural, transformando a terapia em um processo leve e profundo ao mesmo tempo.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium transition shadow-sm inline-block">
+                                Falar com a Rebeca
+                            </a>
+                            <a href="#servicos" class="bg-transparent border border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-full font-medium transition inline-block">
+                                Conheça minhas áreas de atuação
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Diferenciais -->
+        <section id="diferenciais" class="py-20 bg-bgOffWhite">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-serif text-textMain font-semibold mb-12">Um Consultório 100% Lúdico no Centro Norte de Cuiabá</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-serif text-textMain font-semibold mb-3">Ambiente Adaptado</h3>
+                        <p class="text-textMain/80 font-light">Consultório 100% lúdico e adaptado para o público jovem, pensado para o conforto e expressão criativa.</p>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-serif text-textMain font-semibold mb-3">Sem a frieza dos consultórios tradicionais</h3>
+                        <p class="text-textMain/80 font-light">Comunicação empática e afetuosa, criando um vínculo de confiança que acelera os resultados terapêuticos.</p>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 text-accent">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-serif text-textMain font-semibold mb-3">Parceria direta com a família</h3>
+                        <p class="text-textMain/80 font-light">Foco na parceria com os pais para resultados mais rápidos, alinhando estratégias para o dia a dia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ -->
+        <section id="faq" class="py-20 bg-secondary/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-serif text-textMain font-semibold mb-4">Dúvidas Frequentes sobre Terapia Infantil</h2>
+                    <p class="text-textMain/80 font-light">Respostas rápidas para as principais dúvidas dos pais.</p>
+                </div>
+
+                <div class="space-y-4" x-data="{ selected: null }">
+                    <!-- Pergunta 1 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 1 ? selected = 1 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Qual a idade ideal para iniciar a psicoterapia infantil?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 1" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">Não há uma idade única. A partir dos 5 anos a ludoterapia é muito eficaz. O ideal é buscar ajuda quando o comportamento da criança afeta seu bem-estar ou o da família.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 2 ? selected = 2 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Como funciona a primeira consulta de psicologia infantil em Cuiabá?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 2" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">A primeira sessão, chamada de anamnese, é realizada apenas com os pais. Nela, entendemos o histórico da criança, o contexto familiar e o motivo da busca pela terapia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 3 ? selected = 3 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">A clínica de psicologia atende planos de saúde em Cuiabá ou apenas particular?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 3" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">Atendemos de forma particular. Porém, muitos planos de saúde oferecem reembolso para consultas com psicólogos. Fornecemos os recibos necessários para que você solicite o reembolso junto ao seu convênio.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 4 ? selected = 4 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">O que é ludoterapia e como ela ajuda a regular o comportamento do meu filho?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 4" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">A ludoterapia usa o brincar como forma de comunicação. Através de jogos e desenhos, a criança expressa angústias que não consegue colocar em palavras, permitindo ao psicólogo ajudar na regulação emocional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 5 ? selected = 5 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Como convencer meu filho adolescente a fazer terapia sem gerar conflito?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 5" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">Apresente a terapia não como um castigo, mas como um espaço seguro e sigiloso que é dele. Diga que é um local para falar sobre o que quiser, sem julgamentos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 6 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 6 ? selected = 6 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Qual a duração de uma sessão de terapia infantil ou para adolescentes?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 6" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">As sessões têm duração padrão de 50 minutos e costumam ocorrer uma vez por semana, com possibilidade de adaptação conforme a necessidade do caso.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 7 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 7 ? selected = 7 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Como funciona a Orientação de Pais? Nós participamos das sessões com a criança?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 7 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 7" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">A orientação de pais é feita em sessões separadas, apenas com os responsáveis. Serve para alinhar estratégias e acolher as dificuldades da família, sem a presença da criança na sala.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 8 -->
+                    <div class="bg-white border border-gray-100 rounded-lg shadow-sm">
+                        <button @click="selected !== 8 ? selected = 8 : selected = null" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="font-medium text-textMain font-sans">Onde fica o consultório de psicologia da Dra. Rebeca no Centro Norte?</span>
+                            <svg class="w-5 h-5 text-primary transform transition-transform duration-200" :class="selected === 8 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="selected === 8" x-collapse class="px-6 pb-4 pt-0" style="display: none;">
+                            <p class="text-textMain/70 font-light text-sm leading-relaxed">Nosso consultório fica na Avenida Getúlio Vargas, S/N, Centro Norte, Cuiabá. Fácil acesso para quem vem da região de Goiabeiras, Popular e proximidades.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-textMain/80 mb-4 font-light">Ainda tem dúvidas? Fale com a gente</p>
+                    <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition shadow-sm inline-block">
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Localização e Contato -->
+        <section id="localizacao-e-contato" class="py-20 bg-bgOffWhite">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-serif text-textMain font-semibold mb-4">Agende sua Consulta em Cuiabá</h2>
+                    <p class="text-textMain/80 font-light">Estamos prontos para receber sua família.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl shadow-sm border border-secondary/20 overflow-hidden">
+                    <!-- Mapa -->
+                    <div class="lg:w-1/2 min-h-[400px] w-full">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.051910606775!2d-56.0967!3d-15.5989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDM1JzU2LjAiUyA1NsKwMDUnNDguMSJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <!-- Contatos -->
+                    <div class="lg:w-1/2 p-10 flex flex-col justify-center">
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Endereço</h3>
+                                <p class="text-textMain font-medium">Avenida Getúlio Vargas, S/N</p>
+                                <p class="text-textMain/70 font-light">Centro Norte, Cuiabá - MT</p>
+                                <p class="text-textMain/70 font-light mt-1 text-sm">Atendendo também Goiabeiras, Popular e região.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Horário de Atendimento</h3>
+                                <p class="text-textMain font-medium">Segunda a Sexta</p>
+                                <p class="text-textMain/70 font-light">das 08h às 18h</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Contato</h3>
+                                <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="text-primary font-medium text-lg hover:underline block mb-1">
+                                    WhatsApp: (65) 99999-9999
+                                </a>
+                                <a href="https://instagram.com/rebecacavalcantepsicologia" target="_blank" rel="noopener" class="text-textMain/70 hover:text-primary transition font-light flex items-center mt-2">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                    @rebecacavalcantepsicologia
+                                </a>
+                            </div>
+
+                            <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="bg-primary hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-medium transition shadow-md w-full text-center inline-block mt-4">
+                                Agendar via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-secondary/20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 text-center md:text-left">
+                <!-- Brand -->
+                <div class="md:w-1/3 flex flex-col items-center md:items-start">
+                    <img src="/assets/img/logo.png" alt="Psicóloga Rebeca Cavalcante Logo" class="h-10 w-auto object-contain mb-4">
+                    <p class="text-textMain/70 font-light text-sm max-w-xs">
+                        Psicologia Infantil e Juvenil. Acolhimento e desenvolvimento estratégico em Cuiabá.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="md:w-1/3">
+                    <h3 class="text-accent font-semibold mb-4 uppercase tracking-wider text-xs">Navegação</h3>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="#servicos" class="text-textMain/70 hover:text-primary transition font-light text-sm">Serviços</a>
+                        <a href="#sobre" class="text-textMain/70 hover:text-primary transition font-light text-sm">A Psicóloga</a>
+                        <a href="#faq" class="text-textMain/70 hover:text-primary transition font-light text-sm">Dúvidas Frequentes</a>
+                        <a href="#localizacao-e-contato" class="text-textMain/70 hover:text-primary transition font-light text-sm">Contato e Localização</a>
+                    </nav>
+                </div>
+
+                <!-- Contato Info Footer -->
+                <div class="md:w-1/3">
+                    <h3 class="text-accent font-semibold mb-4 uppercase tracking-wider text-xs">Contato</h3>
+                    <p class="text-textMain/70 font-light text-sm mb-1">(65) 99999-9999</p>
+                    <p class="text-textMain/70 font-light text-sm mb-1">Avenida Getúlio Vargas, S/N</p>
+                    <p class="text-textMain/70 font-light text-sm mb-4">Centro Norte, Cuiabá - MT</p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="https://instagram.com/rebecacavalcantepsicologia" target="_blank" rel="noopener" class="text-textMain/40 hover:text-primary transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-center text-xs text-textMain/50 font-light">
+                <p>&copy; 2024 Rebeca Cavalcante Psicologia. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Desenvolvido por OFS Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5565999999999" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c.004-3.639 2.961-6.592 6.602-6.592 1.76 0 3.426.687 4.674 1.936a6.602 6.602 0 0 1 1.932 4.684c-.004 3.64-2.96 6.592-6.602 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
