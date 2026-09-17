@@ -1,0 +1,63 @@
+# ----------------------------------------------------------------------
+# 1) & 2) Rewrite Rules: HTTPS Force & www to non-www Standardisation
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirect www to non-www (and force HTTPS at the same time to prevent double redirects)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
+
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3) Custom 404 Error Page (Redirects to Home since it is a One-Page site)
+# ----------------------------------------------------------------------
+ErrorDocument 404 /index.html
+
+# ----------------------------------------------------------------------
+# 4) Gzip/Deflate Compression for Performance
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, SVG, and JSON
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/x-javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 5) Browser Cache & Cache-Busting Control
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 0 seconds"
+
+    # Images and Media (jpg, png, webp, svg): 1 month
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+
+    # CSS and JS: 1 week
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+
+    # HTML: 0 seconds
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Force Cache-Control Headers for HTML files to prevent any caching (Cache-Busting)
+<FilesMatch "\.(html|htm)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    </IfModule>
+</FilesMatch>

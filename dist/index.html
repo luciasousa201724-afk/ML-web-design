@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Sites e Tráfego Pago em Cuiabá | ML Web Design</title>
+    <meta name="description" content="Desenvolvemos sites e landing pages de alta conversão. Atraia clientes em Cuiabá e no Brasil com estratégias de tráfego pago no Google e Meta Ads.">
+    <meta name="keywords" content="criação de sites e tráfego pago, web design para pequenos negócios, landing page de alta conversão, gestão de tráfego pago, seo local para empresas, criação de site institucional">
+    
+    <!-- SEO Master -->
+    <link rel="canonical" href="https://mldesigncuiaba.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mldesigncuiaba.com/">
+    <meta property="og:title" content="Criação de Sites e Tráfego Pago em Cuiabá | ML Web Design">
+    <meta property="og:description" content="Desenvolvemos sites e landing pages de alta conversão. Atraia clientes em Cuiabá e no Brasil com estratégias de tráfego pago no Google e Meta Ads.">
+    <meta property="og:image" content="https://mldesigncuiaba.com/assets/img/hero-bg.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mldesigncuiaba.com/">
+    <meta name="twitter:title" content="Criação de Sites e Tráfego Pago em Cuiabá | ML Web Design">
+    <meta name="twitter:description" content="Desenvolvemos sites e landing pages de alta conversão. Atraia clientes em Cuiabá e no Brasil com estratégias de tráfego pago no Google e Meta Ads.">
+    <meta name="twitter:image" content="https://mldesigncuiaba.com/assets/img/hero-bg.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#002B5C',
+                        secondary: '#A68A56',
+                        lightbg: '#F9FAFB',
+                        darktext: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: #111827; }
+        .bg-hero {
+            background-image: linear-gradient(rgba(0, 43, 92, 0.8), rgba(0, 43, 92, 0.9)), url('assets/img/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Nav -->
+    <header x-data="{ open: false, scrolled: false }" 
+            @scroll.window="scrolled = (window.pageYOffset > 20) ? true : false"
+            :class="{ 'bg-white shadow-md py-3': scrolled, 'bg-transparent py-5': !scrolled }"
+            class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold" :class="scrolled ? 'text-primary' : 'text-white'">
+                        ML Web Design
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#sobre" class="font-medium transition-colors hover:text-secondary" :class="scrolled ? 'text-darktext' : 'text-gray-200'">Sobre</a>
+                    <a href="#servicos" class="font-medium transition-colors hover:text-secondary" :class="scrolled ? 'text-darktext' : 'text-gray-200'">Serviços</a>
+                    <a href="#beneficios" class="font-medium transition-colors hover:text-secondary" :class="scrolled ? 'text-darktext' : 'text-gray-200'">Diferenciais</a>
+                    <a href="#como-funciona" class="font-medium transition-colors hover:text-secondary" :class="scrolled ? 'text-darktext' : 'text-gray-200'">Processo</a>
+                    <a href="#faq" class="font-medium transition-colors hover:text-secondary" :class="scrolled ? 'text-darktext' : 'text-gray-200'">FAQ</a>
+                </nav>
+
+                <div class="hidden md:flex">
+                    <a href="https://wa.me/5565996959592" target="_blank" class="bg-secondary hover:bg-yellow-600 text-white px-6 py-2 rounded-full font-semibold transition-colors shadow-lg">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" type="button" :class="scrolled ? 'text-primary' : 'text-white'">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div x-show="open" @click.away="open = false" class="md:hidden bg-white shadow-xl absolute w-full left-0 top-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a @click="open = false" href="#sobre" class="block px-3 py-2 text-base font-medium text-darktext hover:text-secondary">Sobre</a>
+                <a @click="open = false" href="#servicos" class="block px-3 py-2 text-base font-medium text-darktext hover:text-secondary">Serviços</a>
+                <a @click="open = false" href="#beneficios" class="block px-3 py-2 text-base font-medium text-darktext hover:text-secondary">Diferenciais</a>
+                <a @click="open = false" href="#como-funciona" class="block px-3 py-2 text-base font-medium text-darktext hover:text-secondary">Processo</a>
+                <a @click="open = false" href="#faq" class="block px-3 py-2 text-base font-medium text-darktext hover:text-secondary">FAQ</a>
+                <a @click="open = false" href="https://wa.me/5565996959592" target="_blank" class="block mt-4 px-3 py-2 text-center text-base font-medium bg-secondary text-white rounded-md">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <main>
+        <section id="hero" class="bg-hero min-h-screen flex items-center pt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+                <span class="text-secondary font-semibold tracking-wider uppercase text-sm mb-4 block">Especialista em Conversão</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                    ML Web Design: <br class="hidden md:block"/><span class="text-secondary">Criação de Sites e Tráfego Pago</span> em Cuiabá
+                </h1>
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-200 mb-10">
+                    Desenvolvemos landing pages e sites institucionais de alta conversão integrados às melhores estratégias de tráfego pago no Google Ads e Meta Ads. Ajudamos pequenos e médios negócios em Cuiabá e em todo o Brasil a transformarem visitantes em clientes reais diretamente no WhatsApp.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="https://wa.me/5565996959592" target="_blank" class="bg-secondary hover:bg-yellow-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-secondary/30 transform hover:-translate-y-1">
+                        Falar no WhatsApp
+                    </a>
+                    <a href="#servicos" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all">
+                        Conhecer nossos serviços
+                    </a>
+                </div>
+                <p class="mt-6 text-sm text-gray-300 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Atendimento direto com a especialista e resposta rápida.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Barra de Credibilidade -->
+        <section id="credibilidade" class="bg-primary text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                        <div class="bg-white/10 p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h2 class="font-bold text-lg mb-2">Foco Total em Conversão</h2>
+                        <p class="text-sm text-gray-300">Estruturas visuais desenhadas exclusivamente para gerar cliques e chamadas no WhatsApp.</p>
+                    </div>
+                    <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                        <div class="bg-white/10 p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <h2 class="font-bold text-lg mb-2">SEO Local Nativo</h2>
+                        <p class="text-sm text-gray-300">Páginas otimizadas desde a primeira linha de código para melhorar seu posicionamento no Google.</p>
+                    </div>
+                    <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                        <div class="bg-white/10 p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h2 class="font-bold text-lg mb-2">Design Rápido e Responsivo</h2>
+                        <p class="text-sm text-gray-300">Carregamento ultrarrápido adaptado para smartphones, tablets e computadores.</p>
+                    </div>
+                    <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                        <div class="bg-white/10 p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h2 class="font-bold text-lg mb-2">Atendimento Personalizado</h2>
+                        <p class="text-sm text-gray-300">Acompanhamento próximo do briefing até a entrega final do projeto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Sobre -->
+        <section id="sobre" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="flex justify-center items-center">
+                        <img src="assets/img/quemsomos.png" alt="Maria Lucia — ML Web Design" class="w-full max-w-md h-auto object-contain drop-shadow-2xl" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Quem Somos</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Sua Parceira Estratégica em Web Design e Anúncios Online</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            A ML Web Design nasceu com a missão de entregar soluções digitais acessíveis, modernas e altamente eficientes para empresas que precisam expandir suas vendas. Sob a liderança de Maria Lucia, unimos design de alta performance e gestão de anúncios estratégicos para colocar o seu negócio em destaque no mercado.
+                        </p>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            Atendemos de forma presencial em Cuiabá/MT e 100% online para empresas de todo o Brasil. Nosso compromisso não é apenas criar páginas bonitas, mas construir ferramentas funcionais que transmitem credibilidade imediata e facilitam a jornada do seu cliente até o fechamento.
+                        </p>
+                        <a href="#contato" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-900 text-white px-8 py-4 rounded-full font-bold transition-colors">
+                            Falar com a Especialista
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Serviços -->
+        <section id="servicos" class="py-24 bg-lightbg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">O Que Fazemos</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Serviços de Web Design e Gestão de Tráfego para Impulsionar sua Empresa</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Servico 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:border-secondary transition-colors group">
+                        <img src="assets/img/servico-1.png" alt="Criação de Site Institucional Profissional" class="rounded-xl mb-6 w-full h-48 object-cover" loading="lazy" width="600" height="400">
+                        <h3 class="text-xl font-bold text-primary mb-3">Criação de Site Institucional Profissional</h3>
+                        <p class="text-gray-600 mb-8 h-32 overflow-hidden">
+                            Desenvolvimento de sites institucionais modernos, responsivos e otimizados para mecanismos de busca. A solução ideal para construir autoridade, apresentar seus diferenciais competitivos e consolidar a presença digital da sua marca com um posicionamento sólido.
+                        </p>
+                        <a href="https://wa.me/5565996959592?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20Site%20Institucional" target="_blank" class="block text-center w-full bg-gray-50 group-hover:bg-primary group-hover:text-white text-primary border border-gray-200 group-hover:border-primary px-6 py-3 rounded-xl font-semibold transition-all">
+                            Solicitar Orçamento de Site
+                        </a>
+                    </div>
+
+                    <!-- Servico 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:border-secondary transition-colors group">
+                        <img src="assets/img/servico-2.png" alt="Landing Page de Alta Conversão para WhatsApp" class="rounded-xl mb-6 w-full h-48 object-cover" loading="lazy" width="600" height="400">
+                        <h3 class="text-xl font-bold text-primary mb-3">Landing Page de Alta Conversão para WhatsApp</h3>
+                        <p class="text-gray-600 mb-8 h-32 overflow-hidden">
+                            Páginas estratégicas focadas em uma única ação: transformar visitantes em oportunidades de vendas. Com visual marcante, carregamento ágil e botões estrategicamente posicionados, sua empresa recebe contatos qualificados diretamente no atendimento via WhatsApp.
+                        </p>
+                        <a href="https://wa.me/5565996959592?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20Landing%20Page" target="_blank" class="block text-center w-full bg-gray-50 group-hover:bg-primary group-hover:text-white text-primary border border-gray-200 group-hover:border-primary px-6 py-3 rounded-xl font-semibold transition-all">
+                            Criar Minha Landing Page
+                        </a>
+                    </div>
+
+                    <!-- Servico 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:border-secondary transition-colors group">
+                        <img src="assets/img/servico-3.png" alt="Gestão de Tráfego Pago no Google Ads e Meta Ads" class="rounded-xl mb-6 w-full h-48 object-cover" loading="lazy" width="600" height="400">
+                        <h3 class="text-xl font-bold text-primary mb-3">Gestão de Tráfego Pago (Google Ads e Meta Ads)</h3>
+                        <p class="text-gray-600 mb-8 h-32 overflow-hidden">
+                            Planejamento e execução de campanhas de anúncios focadas na atração de clientes qualificados. Colocamos sua empresa em frente às pessoas que estão procurando pelos seus produtos e serviços no Google, Instagram e Facebook no momento exato da compra.
+                        </p>
+                        <a href="https://wa.me/5565996959592?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Gest%C3%A3o%20de%20Tr%C3%A1fego%20Pago" target="_blank" class="block text-center w-full bg-gray-50 group-hover:bg-primary group-hover:text-white text-primary border border-gray-200 group-hover:border-primary px-6 py-3 rounded-xl font-semibold transition-all">
+                            Atrair Mais Clientes com Anúncios
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p class="text-lg font-medium text-gray-800">Dúvida sobre qual é a melhor solução para o momento do seu negócio?</p>
+                    <a href="https://wa.me/5565996959592" target="_blank" class="bg-secondary hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-bold whitespace-nowrap transition-colors">
+                        Conversar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Benefícios -->
+        <section id="beneficios" class="py-24 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Diferenciais</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Por que Escolher a ML Web Design para o Seu Negócio</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 bg-white/10 p-3 rounded-lg text-secondary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Foco Exclusivo em Conversão via WhatsApp</h3>
+                            <p class="text-gray-300 text-sm">Eliminamos barreiras e formulários extensos. Cada seção é planejada para direcionar o cliente para o seu canal de vendas mais rápido.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 bg-white/10 p-3 rounded-lg text-secondary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Estrutura de SEO Local Aplicada a Cada Projeto</h3>
+                            <p class="text-gray-300 text-sm">Aplicamos técnicas avançadas de SEO para potencializar a visibilidade da sua empresa nas pesquisas locais do Google em Cuiabá e região.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 bg-white/10 p-3 rounded-lg text-secondary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Acompanhamento Próximo e Sem Complicação</h3>
+                            <p class="text-gray-300 text-sm">Atendimento direto e transparente. Você acompanha todas as etapas de criação sem termos técnicos confusos.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 bg-white/10 p-3 rounded-lg text-secondary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Layouts Responsivos e Carregamento Rápido</h3>
+                            <p class="text-gray-300 text-sm">Seu site abre em segundos em qualquer tela, garantindo uma excelente experiência para o usuário e melhor nota no Google.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 bg-white/10 p-3 rounded-lg text-secondary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Soluções Sob Medida para Pequenos Negócios</h3>
+                            <p class="text-gray-300 text-sm">Estruturas funcionais ajustadas à realidade do mercado local, garantindo um excelente retorno sobre o investimento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Processo -->
+        <section id="como-funciona" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Etapas do Projeto</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Como Funciona Nosso Atendimento</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Lines connecting steps (hidden on mobile) -->
+                    <div class="hidden md:block absolute top-12 left-10 right-10 h-0.5 bg-gray-200 z-0"></div>
+                    
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto bg-primary text-white text-3xl font-bold flex items-center justify-center rounded-full mb-6 shadow-lg border-4 border-white">
+                            01
+                        </div>
+                        <h3 class="text-xl font-bold text-darktext mb-3">Alinhamento e Briefing</h3>
+                        <p class="text-gray-600 text-sm">Entendemos a fundo seu modelo de negócio, seus diferenciais e seus objetivos comerciais através de uma conversa rápida no WhatsApp.</p>
+                    </div>
+                    
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto bg-primary text-white text-3xl font-bold flex items-center justify-center rounded-full mb-6 shadow-lg border-4 border-white">
+                            02
+                        </div>
+                        <h3 class="text-xl font-bold text-darktext mb-3">Planejamento e Copywriting</h3>
+                        <p class="text-gray-600 text-sm">Estruturamos a hierarquia visual e criamos os textos persuasivos focados nas dores e necessidades do seu público-alvo.</p>
+                    </div>
+                    
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto bg-primary text-white text-3xl font-bold flex items-center justify-center rounded-full mb-6 shadow-lg border-4 border-white">
+                            03
+                        </div>
+                        <h3 class="text-xl font-bold text-darktext mb-3">Desenvolvimento e Integração</h3>
+                        <p class="text-gray-600 text-sm">Construímos sua página com código limpo, design moderno e integração completa com os botões de atendimento via WhatsApp.</p>
+                    </div>
+                    
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto bg-secondary text-white text-3xl font-bold flex items-center justify-center rounded-full mb-6 shadow-lg border-4 border-white">
+                            04
+                        </div>
+                        <h3 class="text-xl font-bold text-darktext mb-3">Validação e Lançamento</h3>
+                        <p class="text-gray-600 text-sm">Revisamos todos os detalhes do projeto junto com você e colocamos sua estrutura no ar, pronta para receber visitantes e gerar contatos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Depoimentos -->
+        <section id="depoimentos" class="py-24 bg-lightbg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Nossa Garantia</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Compromisso com Resultados e Qualidade Digital</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                        <svg class="w-10 h-10 text-secondary/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                        <p class="text-gray-700 italic mb-6 relative z-10 pt-4">"Nosso compromisso é entregar páginas limpas, rápidas e totalmente direcionadas para gerar conversas reais no WhatsApp da sua empresa."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="font-bold text-darktext">Foco em Projetos Funcionais</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                        <svg class="w-10 h-10 text-secondary/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                        <p class="text-gray-700 italic mb-6 relative z-10 pt-4">"Explicamos cada etapa do projeto com clareza para que o empresário saiba exatamente como a sua nova estrutura digital trabalhará a favor do seu negócio."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="font-bold text-darktext">Atendimento Transparente e Próximo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                        <svg class="w-10 h-10 text-secondary/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                        <p class="text-gray-700 italic mb-6 relative z-10 pt-4">"Unimos o desenvolvimento de sites otimizados à gestão de tráfego pago, oferecendo a base necessária para pequenas e médias empresas atraírem clientes constantemente."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="font-bold text-darktext">Estratégia Integrada de Crescimento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Área de Atuação e SEO Local -->
+        <section id="area-atuacao" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Área de Atuação</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Atendimento Presencial em Cuiabá - MT e Projetos Online para Todo o Brasil</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            A ML Web Design possui estrutura física localizada no Bairro Areão, em Cuiabá/MT, oferecendo suporte próximo para empresas da Capital, Várzea Grande e região metropolitana. Também atendemos clientes em todo o território nacional por meio de reuniões e processos 100% digitais.
+                        </p>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            Seja para desenvolver um site institucional completo, uma landing page de alta conversão ou gerenciar suas campanhas de tráfego pago no Google Ads e Meta Ads, nossa equipe está pronta para impulsionar a sua presença no mercado.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-darktext">Endereço:</p>
+                                    <p class="text-gray-600">Cuiabá – MT | Atendimento 100% online</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-darktext">Horário de Funcionamento:</p>
+                                    <p class="text-gray-600">Segunda a Sexta das 08h às 18h | Sábado das 09h às 12h</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-darktext">Telefone e WhatsApp:</p>
+                                    <p class="text-gray-600">(65) 99695-9592</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-xl">
+                        <!-- Substituir src do iframe abaixo pelo link correto do Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.664426861214!2d-56.08287752402138!3d-15.609440623277713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db1b98d25d1e3%3A0xc3bc6d013978393c!2sAv.%20Jo%C3%A3o%20Eug%C3%AAnio%20Gon%C3%A7alves%20Pinheiro%2C%20410%20-%20Are%C3%A3o%2C%20Cuiab%C3%A1%20-%20MT%2C%2078050-250!5e0!3m2!1spt-BR!2sbr!4v1714589201834!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ -->
+        <section id="faq" class="py-24 bg-lightbg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">FAQ Estratégico</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Perguntas Frequentes sobre Criação de Sites e Anúncios</h2>
+                </div>
+
+                <div x-data="{ active: null }" class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Qual é o valor para criar um site institucional ou landing page em Cuiabá?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 1" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                O investimento varia conforme a estrutura e os recursos necessários para o seu projeto. Trabalhamos com soluções sob medida com excelente custo-benefício para pequenos e médios negócios. Entre em contato pelo WhatsApp para receber uma proposta personalizada.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Qual é o prazo médio de entrega de uma One Page ou Landing Page?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 2" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                O prazo médio de desenvolvimento é de 7 a 15 dias úteis após a entrega das informações do briefing. Mantemos um fluxo de produção ágil para colocar sua estrutura no ar o mais rápido possível.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">O site já é entregue otimizado para aparecer nas buscas do Google (SEO Local)?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 3" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                Sim, todos os nossos projetos são desenvolvidos seguindo as boas práticas de SEO Local em Cuiabá. O código e os conteúdos são estruturados para facilitar a indexação e melhorar a visibilidade do seu negócio nos buscadores.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Como funciona a integração do site com o botão do WhatsApp?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 4" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                Posicionamos botões estratégicos e flutuantes ao longo de toda a página. Quando o visitante clica, é redirecionado para o seu aplicativo de mensagens com um texto pré-formatado identificando o interesse dele.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Qual é a diferença entre uma Landing Page e um Site Institucional?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 5" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                A Landing Page é uma página focada em uma única ação direta de conversão, ideal para acompanhar campanhas de tráfego pago. O Site Institucional apresenta toda a empresa, sua história, visão e a linha completa de serviços.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 6 ? null : 6)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">A ML Web Design atende apenas empresas de Cuiabá ou de outras regiões do Brasil?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 6" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                Atendemos presencialmente empresas de Cuiabá e região metropolitana, além de desenvolvermos projetos 100% online para clientes de qualquer estado do Brasil com a mesma agilidade.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 7 ? null : 7)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Como funciona o serviço de gestão de tráfego pago no Google Ads e Meta Ads?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 7" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                Criamos, gerenciamos e otimizamos anúncios segmentados no Google, Instagram e Facebook. O objetivo é atrair consumidores qualificados que estão procurando pelos seus serviços exatamente no momento da pesquisa.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <button @click="active = (active === 8 ? null : 8)" class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-bold text-darktext">Preciso pagar alguma taxa mensal ou mensalidade após a entrega do site?</span>
+                            <svg class="w-5 h-5 text-secondary transform transition-transform duration-200" :class="{ 'rotate-180': active === 8 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="active === 8" x-collapse x-cloak>
+                            <div class="px-6 pb-4 text-gray-600">
+                                Não cobramos mensalidade pelo desenvolvimento da página. Os únicos custos recorrentes após a entrega são os referentes à hospedagem do site e ao registro do domínio, pagos diretamente às plataformas mantenedoras.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA Final / Contato -->
+        <section id="contato" class="py-24 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/5 rounded-3xl p-8 md:p-16 border border-white/10 text-center shadow-2xl">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Pronto para Solicitar seu Orçamento e Atrair Mais Clientes?</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                        Não perca vendas por falta de um posicionamento profissional na internet. Fale diretamente com quem entende de criação de sites e tráfego pago para alavancar seu negócio.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                        <a href="https://wa.me/5565996959592" target="_blank" class="bg-secondary hover:bg-yellow-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+                            Falar no WhatsApp Agora
+                        </a>
+                        <a href="tel:5565996959592" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            Ligar para (65) 99695-9592
+                        </a>
+                    </div>
+                    
+                    <p class="text-sm text-gray-400 mb-8">Respondemos suas dúvidas rapidamente durante o horário comercial.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left border-t border-white/20 pt-8 mt-8">
+                        <div>
+                            <p class="font-bold text-secondary mb-1">Endereço:</p>
+                            <p class="text-gray-300 text-sm">Avenida João Eugênio Gonçalves Pinheiro, 410, Casa 10, Condomínio Villa Lobos - Bairro Areão, Cuiabá - MT</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-secondary mb-1">Telefone / WhatsApp:</p>
+                            <p class="text-gray-300 text-sm">(65) 99695-9592</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-secondary mb-1">Horário de Atendimento:</p>
+                            <p class="text-gray-300 text-sm">Segunda a Sexta das 08h às 18h<br>Sábado das 09h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-2xl font-bold text-white mb-4 block">
+                        ML Web Design
+                    </a>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Maria Lucia Web Design & Tráfego Pago
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/mlwebdesign._" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-bold text-white mb-4 block">Navegação Rápida</p>
+                    <ul class="space-y-2">
+                        <li><a href="#servicos" class="hover:text-secondary transition-colors">Serviços</a></li>
+                        <li><a href="#beneficios" class="hover:text-secondary transition-colors">Diferenciais</a></li>
+                        <li><a href="#sobre" class="hover:text-secondary transition-colors">Sobre</a></li>
+                        <li><a href="#area-atuacao" class="hover:text-secondary transition-colors">Localização</a></li>
+                        <li><a href="#faq" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#contato" class="hover:text-secondary transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-bold text-white mb-4 block">Contato</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Cuiabá – MT | Atendimento 100% online</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>(65) 99695-9592</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <p class="font-bold text-white mb-4 block">Horário</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>Seg a Sex: 08h às 18h</li>
+                        <li>Sáb: 09h às 12h</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 ML Web Design. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Desenvolvido por OFS Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5565996959592" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/40 hover:scale-110 transition-transform z-50">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    </a>
+
+</body>
+</html>
